@@ -7,7 +7,6 @@ function App() {
   const [selectedChannelContext, setSelectedChannelContext] = useState<
     IChannel | undefined
   >(undefined);
-
   const [messagesContext, setMessagesContext] = useState<IMessage[]>([]);
   const [isOptimistic, setIsOptimistic] = useState(false);
 

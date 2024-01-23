@@ -8,12 +8,13 @@ type MessageListProp = {
 const MessageList = ({ messageList }: MessageListProp) => {
   const messagesEnd = useRef<HTMLDivElement>(null);
 
-  const scrollToBottom = () => {
-    const node = messagesEnd.current;
-    node?.scrollIntoView({ behavior: "smooth", block: "end" });
-  };
-
   useEffect(() => {
+    const scrollToBottom = () => {
+      window.HTMLElement.prototype.scrollIntoView = function () {};
+      const node = messagesEnd.current;
+      node && node.scrollIntoView({ behavior: "smooth", block: "end" });
+    };
+
     scrollToBottom();
   }, [messageList]);
 
