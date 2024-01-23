@@ -1,5 +1,7 @@
 # AlphaSense Home Test
 
+This is a prototype message board application with channels and messages. The application is built using the MERN (MongoDB, Express.js, React, Node.js) stack with Socket.IO for real-time communication.
+
 - [AlphaSense Home Test](#alphasense-home-test)
   - [Tasks status](#tasks-status)
     - [React Client](#react-client)
@@ -9,7 +11,7 @@
       - [\> Messages](#-messages)
       - [\> No error handling required](#-no-error-handling-required)
     - [NodeJS backend](#nodejs-backend)
-  - [Instructions](#instructions)
+  - [Development in local](#development-in-local)
     - [backend](#backend)
     - [Frontend](#frontend)
   - [Run with docker](#run-with-docker)
@@ -82,7 +84,7 @@
   - Body
     - Message text
 
-## Instructions
+## Development in local
 
 ### backend
 
