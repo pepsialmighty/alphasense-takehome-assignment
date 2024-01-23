@@ -4,8 +4,8 @@ WORKDIR /usr/src/app
 
 RUN apt-get update 
 
-COPY ./package.json ./
-COPY ./package-lock.json ./
+COPY package.json ./
+COPY package-lock.json ./
 
 RUN npm ci
 
