@@ -40,7 +40,6 @@ describe("Socket Controller Tests", () => {
     await handleSocketConnection(socket);
 
     // Ensure the Channel.find mock was called
-    // expect(mockFind).toHaveBeenCalledWith({});
     expect(mockFind).toHaveBeenCalled();
 
     socket.emit("getChannels", [

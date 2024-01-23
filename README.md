@@ -19,6 +19,12 @@
 ## Tasks status
 
 > Completed all tasks
+>
+> Extra features
+>
+> - Optimistic loading
+> - Virtual scroll to latest message
+> - Data caching on client using IndexedDb
 
 ### React Client
 

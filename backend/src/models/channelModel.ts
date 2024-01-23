@@ -1,7 +1,6 @@
 import mongoose, { Schema, model, Document } from "mongoose";
 import { v4 as uuidv4 } from "uuid";
 
-// need to look again the .d.ts file
 export interface IChannel extends Document {
   id: string;
   name: string;
