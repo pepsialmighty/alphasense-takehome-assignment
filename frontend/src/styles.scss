@@ -1,0 +1,302 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 760px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+$primary-blue: #053ee2;
+$secondary-blue: #82c1ff;
+$dark-blue: #04519e;
+$light-blue: #c1e0ff;
+$primary-gray: #334252;
+
+.home {
+  background-color: $secondary-blue;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    border-radius: 10px;
+    width: 65%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+
+    .sidebar {
+      flex: 1;
+      background-color: $primary-gray;
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        height: 50px;
+        padding: 10px;
+        justify-content: space-between;
+        color: white;
+
+        .logo {
+          @include tablet {
+            display: none;
+          }
+        }
+
+        img {
+          height: 40px;
+          object-fit: cover;
+
+          @include tablet {
+            display: none;
+          }
+        }
+        .navBarOption {
+          display: flex;
+          gap: 10px;
+
+          button {
+            height: 32px;
+            background-color: white;
+            font-size: 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+
+            :hover {
+              fill: #5d5b8d;
+            }
+
+            svg {
+              fill: $primary-blue;
+              font-weight: 500;
+
+              @include tablet {
+                height: 40px;
+                width: 40px;
+              }
+            }
+
+            @include tablet {
+              height: 40px;
+              font-size: 30px;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+
+        @include tablet {
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .addChannel {
+        border-bottom: 1px solid gray;
+
+        .addChannelForm {
+          padding: 10px;
+          display: flex;
+
+          input {
+            background-color: transparent;
+            border: none;
+            color: white;
+            outline: none;
+            width: 100%;
+
+            &::placeholder {
+              color: lightgray;
+            }
+          }
+
+          button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            img: {
+              width: 70% !important;
+            }
+
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+
+      .channels {
+        // overflow-y: auto !important;
+        overflow: auto;
+        height: calc(100% - 125px);
+
+        .channelCard {
+          padding: 4px;
+          margin: 16px 8px;
+          color: white;
+          cursor: pointer;
+          background-color: #5d5b8d;
+          border-radius: 10px;
+
+          &:hover {
+            background-color: #2f2d52;
+          }
+
+          // this is to show the channel in the channel list
+          .channelCardInfo {
+            span {
+              font-size: 18px;
+              font-weight: 500;
+            }
+            p {
+              font-size: 14px;
+              color: lightgray;
+            }
+          }
+        }
+      }
+    }
+    .channel {
+      flex: 2;
+
+      .channelTitle {
+        height: 50px;
+        background-color: $dark-blue;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        color: lightgray;
+
+        @include tablet {
+          font-size: 10px;
+        }
+      }
+
+      .no-message {
+        background-color: $light-blue;
+        height: 100vh;
+
+        h1 {
+          margin: 0;
+          padding: 10px;
+        }
+
+        @include tablet {
+          h1 {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .messages {
+        background-color: $light-blue;
+        padding: 10px;
+        height: calc(100% - 160px);
+        overflow: auto;
+
+        .message {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 8px;
+
+          .messageContent {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: white;
+            border-radius: 0px 10px 10px 10px;
+
+            h4 {
+              padding: 8px 20px 0px;
+              margin: 0;
+              max-width: max-content;
+            }
+            p {
+              padding: 4px 20px;
+              margin: 0;
+              max-width: max-content;
+            }
+
+            @include tablet {
+              gap: 4px;
+
+              h4 {
+                padding: 2px 8px 0px;
+              }
+              p {
+                padding: 4px 8px;
+                margin: 0;
+                max-width: max-content;
+              }
+            }
+          }
+        }
+        @include tablet {
+          height: calc(100% - 140px);
+        }
+      }
+
+      .input {
+        height: 50px;
+        background-color: white;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          color: #2f2d52;
+          font-size: 18px;
+
+          &::placeholder {
+            color: lightgray;
+          }
+        }
+
+        .send {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            height: 24px;
+            cursor: pointer;
+          }
+
+          button {
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            background-color: $primary-blue;
+            cursor: pointer;
+
+            &:disabled {
+              background-color: $secondary-blue;
+            }
+          }
+        }
+
+        @include tablet {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
