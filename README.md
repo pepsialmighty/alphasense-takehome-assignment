@@ -125,6 +125,12 @@ node dist/index.js
 # or: npm start
 ```
 
+- test
+
+```bash
+npm run test
+```
+
 ### Frontend
 
 > ENVIRONMENT VARIABLES:
@@ -154,6 +160,12 @@ npm start
 
 ```bash
 npm build
+```
+
+- test
+
+```bash
+npm run test
 ```
 
 ## Run with docker
