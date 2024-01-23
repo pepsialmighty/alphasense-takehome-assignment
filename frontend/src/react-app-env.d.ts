@@ -4,7 +4,6 @@ interface IChannel {
   _id: string;
   _v: number;
   name: string;
-  // messages: IMessage[];
   createdAt: string;
   updatedAt: string;
 }
