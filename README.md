@@ -86,7 +86,7 @@ This is a prototype message board application with channels and messages. The ap
 
 ## Development in local
 
-### backend
+### Backend
 
 > ENVIRONMENT VARIABLES:
 >
@@ -176,6 +176,16 @@ To quickly start the application with docker, please use `docker-compose`
 
 - Docker 19+
 - docker-compose
+
+## Interact with database
+
+### Prerequisites
+
+- MongoDB Compass
+- Connect through this URI
+```
+mongodb://localhost:27018
+```
 
 ### Run in the local with docker-compose
 
